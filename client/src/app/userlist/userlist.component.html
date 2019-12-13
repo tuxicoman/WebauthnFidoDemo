@@ -1,0 +1,11 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <p>User List</p>
+      <button mat-button (click)="$event.stopPropagation(); refreshUserList()">
+        Refresh
+      </button>
+    </mat-expansion-panel-header>
+    <pre>{{ userlist | json }}</pre>
+  </mat-expansion-panel>
+</mat-accordion>

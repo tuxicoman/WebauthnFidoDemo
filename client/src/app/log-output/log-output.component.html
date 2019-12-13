@@ -1,0 +1,13 @@
+<div>
+  <h3>Logs</h3>
+  <button mat-button (click)="clearLogs()">Clear log</button>
+</div>
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let log of logs$ | async">
+    <mat-expansion-panel-header [ngClass]="{error: log.type == 'error'}">
+      {{ log.title }}
+    </mat-expansion-panel-header>
+    <pre>{{ log.data | json }}</pre>
+  </mat-expansion-panel>
+</mat-accordion>
